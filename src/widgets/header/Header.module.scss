@@ -1,0 +1,191 @@
+.header {
+  background-color: #ffffff18;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logoImage {
+  width: 40px;
+  height: 40px;
+  margin-right: 0.5rem;
+}
+
+.logoText {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #119cff;
+}
+
+.nav {
+  @media (max-width: 768px) {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  &.navOpen {
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 1rem;
+  }
+}
+
+.navLink {
+  color: var(--light-text-color);
+
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  transition: color 0.2s;
+
+  &:hover {
+    color: #007bff;
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    display: block;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.telegramButton {
+  display: flex;
+  align-items: center;
+  background-color: #0088cc;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #006699;
+  }
+}
+
+.telegramIcon {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+}
+
+.telegramText {
+  @media (max-width: 480px) {
+    display: none;
+  }
+}
+
+.loginButton {
+  background-color: #28a745;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #218838;
+  }
+}
+
+.userMenu {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.userNickname {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.logoutButton {
+  background: none;
+  border: none;
+  color: #dc3545;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: color 0.2s;
+
+  &:hover {
+    color: #b02a37;
+  }
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+
+  span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    transition: all 0.3s;
+  }
+
+  &.hamburgerOpen {
+    span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    span:nth-child(2) {
+      opacity: 0;
+    }
+    span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+  }
+}

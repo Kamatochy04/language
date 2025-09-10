@@ -1,0 +1,38 @@
+
+.wrapper{
+    width: 100%;
+    background: #000;
+    position: relative;
+
+    border: 2px solid #00467f;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+
+}
+
+.setings{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-left: 2px solid var(--main-color);
+    padding:  0 0 0 10px;
+}
+
+.search{
+    position: absolute;
+    left: 10px;
+    top: 55%;
+    transform: translateY(-50%);
+}
+
+.input{
+    width: 100%;
+    padding: 13px 60px 13px 40px ;
+    height: 100%;
+
+    color: #fff;
+    font-size: 16px;
+}

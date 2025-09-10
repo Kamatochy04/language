@@ -1,0 +1,37 @@
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 8px;
+  border-radius: 12px;
+  margin: 0 auto;
+}
+
+.tab {
+  width: 140px;
+  aspect-ratio: 1;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  text-align: center;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+  transition: all 0.25s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    color: #1b50ff;
+  }
+}
+
+.active {
+  background: #1481ff;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4);
+}

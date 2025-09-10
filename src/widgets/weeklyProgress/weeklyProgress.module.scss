@@ -1,0 +1,89 @@
+.progressSection {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.progressPanel {
+  background: linear-gradient(135deg, #0095ff, #b253d7);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+
+  &.collapsed {
+    max-height: 40px;
+    padding: 10px 20px;
+
+    .progressDetails {
+      display: none;
+    }
+  }
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.progressTitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.closeIcon {
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #ecf0f1;
+  }
+}
+
+.progressDetails {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.detailItem {
+  background: #0000001f;
+  flex: 1;
+  min-width: 200px;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.detailLabel {
+  font-size: 16px;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 5px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.detailValue {
+  font-size: 18px;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.detailContent {
+  display: inline-block;
+}
+
+.detailText {
+  font-size: 15px;
+  color: #ecf0f1;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}

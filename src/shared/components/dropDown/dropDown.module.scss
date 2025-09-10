@@ -1,0 +1,59 @@
+.container {
+  position: relative;
+  display: inline-block;
+
+  .button {
+    gap: 20px;
+
+    display: inline;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-light-color);
+    background: #081a3b;
+    border-bottom: 2px solid var(--main-color);
+  }
+}
+
+.list {
+  position: absolute;
+  z-index: 1000;
+  top: 120%;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  max-height: 200px;
+  overflow-y: scroll;
+  &__item {
+    background: var(--main-color);
+    color: var(--text-light-color);
+    font-size: 16px;
+    padding: 10px 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      background: #1746e3d2;
+    }
+  }
+  &::-webkit-scrollbar {
+    width: 4px;
+    opacity: 0;
+    background: #00000000;
+  }
+  &::-webkit-scrollbar-thumb {
+    width: 4px;
+    background: rgba(20, 83, 192, 0.688);
+    border-radius: 10px;
+  }
+}
+
+.icon {
+  svg {
+    fill: #fff;
+  }
+}

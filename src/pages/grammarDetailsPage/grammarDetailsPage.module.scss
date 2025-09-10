@@ -1,0 +1,35 @@
+.details {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.rule {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.imageBlock {
+  margin: 20px 0;
+  text-align: center;
+
+  img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+}
