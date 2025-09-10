@@ -4,7 +4,7 @@ import { useRegisterMutation } from "../api/register.api";
 import { useAppDispatch, useAppSelector } from "@/app/store/hooks";
 import { setUserData } from "@/features";
 import { Button, Input } from "@/shared/components";
-import styles from "./RegisterForm.module.scss";
+import styles from "./registerForm.module.scss";
 
 function RegisterForm() {
   const { name, email, password, repeatPassword } = useAppSelector(
