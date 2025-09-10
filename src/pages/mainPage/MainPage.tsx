@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { useState } from "react";
 import styles from "./mainPage.module.scss";
 import { LessonCard, WeeklyProgress } from "@/widgets";
@@ -131,26 +130,6 @@ function MainPage() {
         ))}
       </div>
     </div>
-=======
-import { Header, TaskCard } from "@/widgets";
-
-function MainPage() {
-  return (
-    <>
-      <Header
-        isAuthenticated={false}
-        onLogout={function (): void {
-          throw new Error("Function not implemented.");
-        }}
-      />
-      <div className="container">
-        <h1>Доступные задачи</h1>
-        <TaskCard />
-        <TaskCard />
-        <TaskCard />
-      </div>
-    </>
->>>>>>> e75aba1f74a52c66e97ce7baae36eec88a4a4b1d
   );
 }
 

@@ -7,10 +7,6 @@ import { EyeInvisibleOutlined, EyeOutlined } from "@ant-design/icons";
 export type InputPropsType = ComponentProps<"input"> &
   InputVariant & {
     label?: string;
-<<<<<<< HEAD
-=======
-    isError?: boolean;
->>>>>>> e75aba1f74a52c66e97ce7baae36eec88a4a4b1d
     errorText?: string;
   };
 
@@ -19,10 +15,7 @@ export const Input: FC<InputPropsType> = ({
   label,
   type,
   errorText,
-<<<<<<< HEAD
-=======
-  isError = false,
->>>>>>> e75aba1f74a52c66e97ce7baae36eec88a4a4b1d
+
   ...props
 }) => {
   const [inputType, setInputType] = useState<string>(type || "text");

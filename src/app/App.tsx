@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import {
   DictionaryPage,
   GrammarDetailsPage,
@@ -34,14 +33,5 @@ export const App = () => {
         <Route path="/:lessonId" element={<LessonPage />} />
       </Routes>
     </Provider>
-=======
-import { MainPage } from "@/pages";
-import "./styles/index.scss";
-export const App = () => {
-  return (
-    <div>
-      <MainPage />
-    </div>
->>>>>>> e75aba1f74a52c66e97ce7baae36eec88a4a4b1d
   );
 };
