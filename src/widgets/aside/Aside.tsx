@@ -1,6 +1,6 @@
 import { BookOpen, Home, Library, BarChart2 } from "lucide-react";
 import { NavLink } from "react-router-dom";
-import styles from "./Aside.module.scss";
+import styles from "./aside.module.scss";
 
 const Aside = () => {
   return (
