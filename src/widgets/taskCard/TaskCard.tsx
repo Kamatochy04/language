@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./TaskCard.module.scss";
+import styles from "./taskCard.module.scss";
 
 const TaskCard: React.FC = () => {
   const testData = {

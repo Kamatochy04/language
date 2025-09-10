@@ -1,4 +1,4 @@
-import styles from "./PartOfSpeechTabs.module.scss";
+import styles from "./partOfSpeechTabs.module.scss";
 
 function PartOfSpeechTabs() {
   const partsOfSpeech = [
