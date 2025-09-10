@@ -1,6 +1,6 @@
 import React from "react";
 import { BarChart2, CheckCircle, Clock, BookOpen } from "lucide-react";
-import styles from "./StatisticsPage.module.scss";
+import styles from "./statisticsPage.module.scss";
 
 interface StatsData {
   lessonsCompleted: number;
