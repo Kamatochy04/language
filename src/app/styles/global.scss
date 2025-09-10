@@ -7,10 +7,15 @@
   font-style: normal;
   box-sizing: border-box;
   font-size: 16px;
+  transition: all 0.3s;
 }
 
 .button {
   position: fixed;
+}
+
+a {
+  color: inherit;
 }
 
 .app {
@@ -19,6 +24,7 @@
 .main {
   width: 100%;
   padding: 15px;
+  min-height: 100vh;
 }
 
 input {
@@ -71,5 +77,11 @@ h4 {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 5px;
   }
 }

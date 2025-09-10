@@ -2,4 +2,73 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  position: relative;
+  &__title {
+    font-size: 22px;
+    text-align: start;
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__test {
+    background: #7b2ce3;
+    color: #fff;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+}
+
+.button {
+  width: 100%;
+}
+
+.filters {
+  padding: 10px 0;
+}
+
+.wordList {
+  margin-top: 10px;
+  & > div {
+    &:nth-of-type(even) {
+      background: #f0f0f0;
+    }
+    &:nth-of-type(odd) {
+      background: #59595949;
+    }
+  }
+}
+
+.footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 40px;
+  display: flex;
+  gap: 10px;
+}
+
+.sercle {
+  height: 100%;
+  border-radius: 20px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 300;
+  background: rgb(21, 165, 5);
+}
+
+@media (max-width: 768px) {
+  .footer {
+    bottom: calc(var(--footer-height));
+    gap: 5px;
+  }
 }

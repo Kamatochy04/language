@@ -14,7 +14,7 @@ function WeeklyProgress({
   skills,
   testDetails,
 }: WeeklyProgressProps) {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
 
   const toggleVisibility = () => {
     setIsVisible(!isVisible);

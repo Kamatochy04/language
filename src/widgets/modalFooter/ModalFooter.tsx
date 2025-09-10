@@ -20,9 +20,6 @@ function ModalFooter() {
 
   return (
     <div className={styles.modalFooter}>
-      <button className="button" onClick={() => navigate("/register")}>
-        ++
-      </button>
       {navItems.map((item) => (
         <button
           key={item.path}

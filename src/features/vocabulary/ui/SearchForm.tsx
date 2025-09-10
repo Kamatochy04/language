@@ -1,10 +1,11 @@
 import { Input } from "@/shared/components";
-// import styles from "./SearchForm.module.scss";
 import { PartOfSpeechTabs } from "@/widgets";
+
+import styles from "./searchForm.module.scss";
 
 function SearchForm() {
   return (
-    <div>
+    <div className={styles.form}>
       <Input />
       <PartOfSpeechTabs />
     </div>

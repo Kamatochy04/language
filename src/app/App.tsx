@@ -11,7 +11,7 @@ import {
 } from "@/pages";
 import { Route, Routes } from "react-router-dom";
 
-import "./styles/global.scss";
+import "./styles/index.scss";
 import MainLayout from "./layout/MainLayout";
 import { Provider } from "react-redux";
 import { store } from "./store";
