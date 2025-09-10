@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./DictionaryPage.module.scss";
+import styles from "./dictionaryPage.module.scss";
 import { DictionaryItem } from "@/widgets";
 import { SearchForm } from "@/features";
 
@@ -15,7 +15,6 @@ interface Word {
 function DictionaryPage() {
   const [selectedWord, setSelectedWord] = useState<Word | null>(null);
 
-  // Тестовые данные
   const words = [
     {
       id: "1",
