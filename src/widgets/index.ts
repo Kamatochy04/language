@@ -5,3 +5,5 @@ export { default as WeeklyProgress } from "./weeklyProgress/WeeklyProgress";
 export { default as DictionaryItem } from "./dictionaryItem/DictionaryItem";
 export { default as PartOfSpeechTabs } from "./partOfSpeechTabs/PartOfSpeechTabs";
 export { default as ModalFooter } from "./modalFooter/ModalFooter";
+export { default as VocabularyStatsModal } from "./vocabularyStatsModal/VocabularyStatsModal";
+export { default as AddWordModal } from "./addWordModal/AddWordModal";

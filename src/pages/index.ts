@@ -7,3 +7,4 @@ export { default as RegisterPage } from "./registerPage/RegisterPage";
 export { default as StatisticsPage } from "./statisticsPage/StatisticsPage";
 export { default as LoginPage } from "./loginPage/LoginPage";
 export { default as MainPage } from "./mainPage/MainPage";
+export { default as TestWordPage } from "./testWordPage/TestWordPage";

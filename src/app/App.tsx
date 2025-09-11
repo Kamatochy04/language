@@ -7,6 +7,7 @@ import {
   MainPage,
   RegisterPage,
   StatisticsPage,
+  TestWordPage,
   UserInfoPage,
 } from "@/pages";
 import { Route, Routes } from "react-router-dom";
@@ -26,6 +27,7 @@ export const App = () => {
           <Route path="/grammar" element={<GrammarPage />} />
           <Route path="/statistics" element={<StatisticsPage />} />
         </Route>
+        <Route path="/test-word" element={<TestWordPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/information" element={<UserInfoPage />} />
