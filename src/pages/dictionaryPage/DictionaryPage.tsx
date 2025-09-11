@@ -9,13 +9,7 @@ function DictionaryPage() {
   const [isAddWord, setIsAddWord] = useState(false);
   return (
     <div className={styles.dictionary}>
-      <VocabularyStatsModal
-        isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
-        onStartTest={function (): void {
-          throw new Error("Function not implemented.");
-        }}
-      />
+      <VocabularyStatsModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
 
       <AddWordModal
         isOpen={isAddWord}

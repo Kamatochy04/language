@@ -1,16 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import styles from "./vocabularyStatsModal.module.scss";
 
 interface VocabularyStatsModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onStartTest: () => void;
 }
 
-function VocabularyStatsModal({
-  isOpen,
-  onClose,
-  onStartTest,
-}: VocabularyStatsModalProps) {
+function VocabularyStatsModal({ isOpen, onClose }: VocabularyStatsModalProps) {
   const stats = {
     totalWords: 1000,
     knownWords: 600,
@@ -23,6 +19,8 @@ function VocabularyStatsModal({
       others: 100,
     },
   };
+
+  const navigate = useNavigate();
 
   if (!isOpen) return null;
 
@@ -100,7 +98,10 @@ function VocabularyStatsModal({
           </div>
         </div>
 
-        <button className={styles.startTestButton} onClick={onStartTest}>
+        <button
+          className={styles.startTestButton}
+          onClick={() => navigate("/test-word")}
+        >
           Начать тест
         </button>
       </div>
