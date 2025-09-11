@@ -1,0 +1,216 @@
+.lessonPage {
+  min-height: 100vh;
+  padding: 2rem;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+
+  .title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin-top: 0.5rem;
+    font-weight: 400;
+  }
+}
+
+.content {
+  display: grid;
+  gap: 1rem;
+}
+
+.textSection {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+
+  .textWrapper {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4f1fe 100%);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 5px solid #6ab04c;
+  }
+
+  .text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #34495e;
+    white-space: pre-wrap;
+  }
+}
+
+.questionsSection {
+  .sectionTitle {
+    font-size: 2rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+  }
+
+  .questionsList {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .questionCard {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .questionText {
+      font-size: 1.3rem;
+      color: #2c3e50;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    .options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .optionButton {
+      padding: 0.8rem;
+      border: 2px solid #e4e7eb;
+      border-radius: 8px;
+      background: #fff;
+      color: #34495e;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover:not(:disabled) {
+        background: #e4f1fe;
+        border-color: #6ab04c;
+      }
+
+      &:disabled {
+        cursor: not-allowed;
+        opacity: 0.6;
+      }
+    }
+
+    .correct {
+      background: #6ab04c;
+      color: white;
+      border-color: #6ab04c;
+    }
+
+    .incorrect {
+      background: #eb4d4b;
+      color: white;
+      border-color: #eb4d4b;
+    }
+
+    .feedback {
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    .feedbackCorrect {
+      color: #6ab04c;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .feedbackIncorrect {
+      color: #eb4d4b;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .lessonPage {
+    padding: 1rem;
+  }
+
+  .header {
+    .title {
+      font-size: 2.2rem;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+    }
+  }
+
+  .textSection {
+    padding: 1.5rem;
+
+    .textWrapper {
+      padding: 1rem;
+    }
+
+    .text {
+      font-size: 1rem;
+    }
+  }
+
+  .questionsSection {
+    .sectionTitle {
+      font-size: 1.6rem;
+    }
+
+    .questionCard {
+      padding: 1rem;
+
+      .questionText {
+        font-size: 1.1rem;
+      }
+
+      .options {
+        grid-template-columns: 1fr;
+      }
+
+      .optionButton {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    .title {
+      font-size: 1.8rem;
+    }
+  }
+
+  .textSection {
+    padding: 1rem;
+  }
+
+  .questionsSection {
+    .questionCard {
+      padding: 0.8rem;
+    }
+  }
+}

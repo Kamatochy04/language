@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styles from "./mainPage.module.scss";
 import { LessonCard, WeeklyProgress } from "@/widgets";
 
@@ -14,10 +13,6 @@ interface Lesson {
 }
 
 function MainPage() {
-  const [expandedLesson, setExpandedLesson] = useState<string | null>(null);
-  const [currentPage, setCurrentPage] = useState(1);
-  const lessonsPerPage = 7;
-
   const lessons: Lesson[] = [
     {
       id: "lesson1",
@@ -65,21 +60,6 @@ function MainPage() {
     },
   ];
 
-  const firstUncompletedLesson = lessons.find((lesson) => !lesson.completed);
-
-  const indexOfLastLesson = currentPage * lessonsPerPage;
-  const indexOfFirstLesson = indexOfLastLesson - lessonsPerPage;
-  const currentLessons = lessons.slice(indexOfFirstLesson, indexOfLastLesson);
-  const totalPages = Math.ceil(lessons.length / lessonsPerPage);
-
-  const handleToggle = (id: string) => {
-    setExpandedLesson(expandedLesson === id ? null : id);
-  };
-
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page);
-  };
-
   const weeklyProgressData = {
     vocabularyCount: 120,
     grammarTopics: ["Present Simple", "Present Continuous", "Past Simple"],
@@ -96,30 +76,10 @@ function MainPage() {
         testDetails={weeklyProgressData.testDetails}
       />
       <ul className={styles.lessons}>
-        {currentLessons.map((lesson) => (
-          <LessonCard
-            key={lesson.id}
-            lesson={lesson}
-            expandedLesson={expandedLesson}
-            handleToggle={handleToggle}
-            firstUncompletedLesson={firstUncompletedLesson}
-          />
+        {lessons.map((lesson) => (
+          <LessonCard key={lesson.id} lesson={lesson} />
         ))}
       </ul>
-
-      <div className={styles.pagination}>
-        {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-          <button
-            key={page}
-            className={`${styles.pageButton} ${
-              currentPage === page ? styles.active : ""
-            }`}
-            onClick={() => handlePageChange(page)}
-          >
-            {page}
-          </button>
-        ))}
-      </div>
     </div>
   );
 }

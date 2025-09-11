@@ -30,15 +30,20 @@
   white-space: nowrap;
 }
 
-.toggleIcon {
-  font-size: 16px;
-  color: #7f8c8d;
+.lessonContent {
+  max-height: 0;
+  opacity: 1;
+  visibility: hidden;
+  overflow: hidden;
+  border-top: 1px solid #ecf0f1;
 }
 
-.lessonContent {
+.lessonContent.active {
+  max-height: 500px;
+  opacity: 1;
+  visibility: visible;
   margin-top: 15px;
   padding-top: 15px;
-  border-top: 1px solid #ecf0f1;
 }
 
 .lessonDetails {
@@ -84,4 +89,27 @@
 .startButton:disabled {
   background-color: #bdc3c7;
   cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .lessonCard {
+    padding: 10px;
+  }
+
+  .lessonHeader {
+    font-size: 16px;
+  }
+
+  .lessonText {
+    font-size: 14px;
+  }
+
+  .metaItem {
+    font-size: 13px;
+  }
+
+  .startButton {
+    font-size: 13px;
+    padding: 6px 16px;
+  }
 }
