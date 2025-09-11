@@ -76,14 +76,6 @@ function MainPage() {
     setExpandedLesson(expandedLesson === id ? null : id);
   };
 
-  const handleStartLesson = (id: string) => {
-    if (id !== firstUncompletedLesson?.id) {
-      alert("Вы можете начать только первый непройденный урок!");
-      return;
-    }
-    console.log(`Starting lesson ${id}`);
-  };
-
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
   };
@@ -110,7 +102,6 @@ function MainPage() {
             lesson={lesson}
             expandedLesson={expandedLesson}
             handleToggle={handleToggle}
-            handleStartLesson={handleStartLesson}
             firstUncompletedLesson={firstUncompletedLesson}
           />
         ))}

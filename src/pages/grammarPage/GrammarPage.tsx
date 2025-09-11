@@ -23,6 +23,11 @@ const grammarTopics: GrammarTopic[] = [
     title: "Articles (a, an, the)",
     description: "Определённые и неопределённые артикли.",
   },
+  {
+    id: 3,
+    title: "Articles (a, an, the)",
+    description: "Определённые и неопределённые артикли.",
+  },
 ];
 
 function GrammarPage() {
@@ -30,7 +35,7 @@ function GrammarPage() {
 
   return (
     <div className={styles.grammarPage}>
-      <h1>📖 Моя грамматика</h1>
+      <h1> Моя грамматика</h1>
       <div className={styles.cards}>
         {grammarTopics.map((topic) => (
           <div

@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import styles from "./lessonCard.module.scss";
 import { Button } from "@/shared/components";
 
@@ -14,7 +15,6 @@ interface LessonCardProps {
   };
   expandedLesson: string | null;
   handleToggle: (id: string) => void;
-  handleStartLesson: (id: string) => void;
   firstUncompletedLesson?: { id: string } | undefined;
 }
 
@@ -22,9 +22,9 @@ function LessonCard({
   lesson,
   expandedLesson,
   handleToggle,
-  handleStartLesson,
   firstUncompletedLesson,
 }: LessonCardProps) {
+  const navigate = useNavigate();
   return (
     <li
       key={lesson.id}
@@ -53,7 +53,7 @@ function LessonCard({
           </div>
           <Button
             className={styles.startButton}
-            onClick={() => handleStartLesson(lesson.id)}
+            onClick={() => navigate("/adasdas")}
             disabled={lesson.id !== firstUncompletedLesson?.id}
           >
             Начать урок
