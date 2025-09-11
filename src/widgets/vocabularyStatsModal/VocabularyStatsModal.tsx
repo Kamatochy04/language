@@ -1,4 +1,4 @@
-import styles from "./VocabularyStatsModal.module.scss";
+import styles from "./vocabularyStatsModal.module.scss";
 
 interface VocabularyStatsModalProps {
   isOpen: boolean;
