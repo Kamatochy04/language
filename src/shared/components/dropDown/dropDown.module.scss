@@ -15,8 +15,8 @@
     font-size: 16px;
     font-weight: 600;
     color: var(--text-light-color);
-    background: #081a3b;
-    border-bottom: 2px solid var(--main-color);
+    background: #ffffff00;
+    border-bottom: 2px solid #5585ff;
   }
 }
 
@@ -30,24 +30,24 @@
   max-height: 200px;
   overflow-y: scroll;
   &__item {
-    background: var(--main-color);
-    color: var(--text-light-color);
+    background: #fff;
+    color: #000000;
     font-size: 16px;
     padding: 10px 25px;
     cursor: pointer;
     transition: all 0.3s;
     &:hover {
-      background: #1746e3d2;
+      background: #e4e4e4;
     }
   }
   &::-webkit-scrollbar {
     width: 4px;
     opacity: 0;
-    background: #00000000;
+    background: #0000000c;
   }
   &::-webkit-scrollbar-thumb {
     width: 4px;
-    background: rgba(20, 83, 192, 0.688);
+    background: rgba(20, 83, 192, 0.301);
     border-radius: 10px;
   }
 }

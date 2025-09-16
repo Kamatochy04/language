@@ -33,7 +33,7 @@ export const App = () => {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/information" element={<UserInfoPage />} />
         {/* <Route path="/grammar/:id" element={<GrammarDetailsPage />} /> */}
-        <Route path="/:lessonId" element={<LessonPage />} />
+        <Route path="/lessons/:id" element={<LessonPage />} />
       </Routes>
     </Provider>
   );

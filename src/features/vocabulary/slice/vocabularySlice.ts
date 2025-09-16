@@ -17,8 +17,14 @@ const vocabularySlice = createSlice({
     builder.addMatcher(
       vocabularyApi.endpoints.getAllwords.matchFulfilled,
       (state, action) => {
-        console.log(action.payload.data);
-        state.words = action.payload.data;
+        console.log(action.payload);
+        state.words = action.payload;
+      }
+    );
+    builder.addMatcher(
+      vocabularyApi.endpoints.addWord.matchFulfilled,
+      (state, action) => {
+        state.words.push(action.payload);
       }
     );
   },

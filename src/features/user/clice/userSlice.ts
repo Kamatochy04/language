@@ -1,9 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { registerApi } from "../api/user.api";
 
 type RegisterData = {
-  email: string;
-  name: string;
+  username: string;
   password: string;
   repeatPassword: string;
 };
@@ -16,8 +14,7 @@ type InitialState = {
 
 const initialState: InitialState = {
   user: {
-    email: "",
-    name: "",
+    username: "",
     password: "",
     repeatPassword: "",
   },
@@ -30,22 +27,21 @@ const registerSlice = createSlice({
   initialState,
   reducers: {
     setUserData: (state, action: PayloadAction<RegisterData>) => {
-      state.user.name = action.payload.name;
-      state.user.email = action.payload.email;
+      state.user.username = action.payload.username;
       state.user.password = action.payload.password;
       state.user.repeatPassword = action.payload.repeatPassword;
     },
   },
-  extraReducers: (builder) => {
-    builder.addMatcher(
-      registerApi.endpoints.register.matchFulfilled,
-      (state, action) => {
-        state.token = action.payload.token;
-        state.isAuth = true;
-        state.user = initialState.user;
-      }
-    );
-  },
+  // extraReducers: (builder) => {
+  //   builder.addMatcher(
+  //     registerApi.endpoints.register.matchFulfilled,
+  //     (state, action) => {
+  //       state.token = action.payload.token;
+  //       state.isAuth = true;
+  //       state.user = initialState.user;
+  //     }
+  //   );
+  // },
 });
 
 export const { setUserData } = registerSlice.actions;

@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./addWordModal.module.scss";
+import { useAddWordMutation } from "@/features/vocabulary/api/vocabulary.api";
 
 interface Example {
   sentence: string;
@@ -8,25 +9,13 @@ interface Example {
 interface AddWordModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onSave: (word: string, translation: string, examples: Example[]) => void;
 }
 
-const AddWordModal: React.FC<AddWordModalProps> = ({
-  isOpen,
-  onClose,
-  onSave,
-}) => {
+const AddWordModal: React.FC<AddWordModalProps> = ({ isOpen, onClose }) => {
   const [word, setWord] = useState("");
   const [translation, setTranslation] = useState("");
   const [examples, setExamples] = useState<Example[]>([{ sentence: "" }]);
-
-  useEffect(() => {
-    if (word) {
-      setTranslation(`(Перевод для "${word}")`);
-    } else {
-      setTranslation("");
-    }
-  }, [word]);
+  const [addWord] = useAddWordMutation();
 
   const handleAddExample = () => {
     setExamples([...examples, { sentence: "" }]);
@@ -44,17 +33,20 @@ const AddWordModal: React.FC<AddWordModalProps> = ({
     }
   };
 
-  const handleSave = () => {
+  const handleSave = async () => {
     if (word && translation) {
-      onSave(
-        word,
-        translation,
-        examples.filter((ex) => ex.sentence.trim() !== "")
-      );
-      setWord("");
-      setTranslation("");
-      setExamples([{ sentence: "" }]);
-      onClose();
+      try {
+        await addWord({
+          word,
+          // examples: examples.map((ex) => ex.sentence).filter((s) => s.trim()),
+        }).unwrap();
+        setWord("");
+        setTranslation("");
+        setExamples([{ sentence: "" }]);
+        onClose();
+      } catch (error) {
+        console.error("Ошибка при добавлении слова:", error);
+      }
     }
   };
 
@@ -63,14 +55,14 @@ const AddWordModal: React.FC<AddWordModalProps> = ({
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.modalContent}>
-        <span className={styles.closeButton} onClick={onClose}>
+        <button className={styles.closeButton} onClick={onClose}>
           &times;
-        </span>
+        </button>
         <h2 className={styles.modalHeader}>Добавить новое слово</h2>
 
         <div className={styles.contentWrapper}>
           <div className={styles.inputSection}>
-            <h3>Слово и перевод</h3>
+            <h3 className={styles.sectionTitle}>Слово и перевод</h3>
             <div className={styles.inputGroup}>
               <label className={styles.inputLabel}>Слово (на английском)</label>
               <input
@@ -87,14 +79,14 @@ const AddWordModal: React.FC<AddWordModalProps> = ({
                 type="text"
                 className={styles.inputField}
                 value={translation}
-                readOnly
-                placeholder="Перевод появится автоматически"
+                onChange={(e) => setTranslation(e.target.value)}
+                placeholder="Введите перевод"
               />
             </div>
           </div>
 
           <div className={styles.examplesSection}>
-            <h3>Примеры использования</h3>
+            <h3 className={styles.sectionTitle}>Примеры использования</h3>
             {examples.map((example, index) => (
               <div key={index} className={styles.exampleGroup}>
                 <input
@@ -118,7 +110,7 @@ const AddWordModal: React.FC<AddWordModalProps> = ({
               className={styles.addExampleButton}
               onClick={handleAddExample}
             >
-              Добавить пример
+              + Добавить пример
             </button>
           </div>
         </div>

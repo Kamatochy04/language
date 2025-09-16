@@ -24,19 +24,27 @@ export type WordEntry = {
   updatedAt: string;
 };
 
-type ResponsData = {
-  data: WordEntry[];
-};
-
 export const vocabularyApi = api.injectEndpoints({
   endpoints: (builder) => ({
-    getAllwords: builder.query<ResponsData, void>({
+    getAllwords: builder.query<WordEntry[], void>({
       query: () => ({
-        url: "/vocabulary",
+        url: "/dictionary/words",
         method: "GET",
+      }),
+    }),
+    addWord: builder.mutation<
+      WordEntry,
+      {
+        word: string;
+      }
+    >({
+      query: (data) => ({
+        url: "/dictionary/words",
+        method: "POST",
+        body: data,
       }),
     }),
   }),
 });
 
-export const { useGetAllwordsQuery } = vocabularyApi;
+export const { useAddWordMutation, useGetAllwordsQuery } = vocabularyApi;

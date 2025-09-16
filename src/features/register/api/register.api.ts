@@ -1,22 +1,19 @@
 import { api } from "@/app/store/api";
 
 interface RegisterRequest {
-  email: string;
   password: string;
-  name: string;
+  username: string;
 }
 
 interface RegisterResponse {
-  id: number;
-  username: string;
-  token: string;
+  accessToken: string;
 }
 
 const registerApi = api.injectEndpoints({
   endpoints: (builder) => ({
     register: builder.mutation<RegisterResponse, RegisterRequest>({
       query: (body) => ({
-        url: "/register",
+        url: "/auth/register",
         method: "POST",
         body,
       }),

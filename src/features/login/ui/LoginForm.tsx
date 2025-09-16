@@ -6,7 +6,7 @@ import { Button, Input } from "@/shared/components";
 import styles from "./loginForm.module.scss";
 
 function LoginForm() {
-  const { name, email, password, repeatPassword } = useAppSelector(
+  const { username, password, repeatPassword } = useAppSelector(
     (state) => state.userSlice.user
   );
   const dispatch = useAppDispatch();
@@ -15,7 +15,7 @@ function LoginForm() {
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name: field, value } = event.target;
     dispatch(
-      setUserData({ name, email, password, repeatPassword, [field]: value })
+      setUserData({ username, password, repeatPassword, [field]: value })
     );
   };
 
@@ -37,7 +37,7 @@ function LoginForm() {
             type="text"
             placeholder="Введите ваше имя"
             name="name"
-            value={name}
+            value={username}
             onChange={onChange}
             className={styles.input}
           />

@@ -1,0 +1,103 @@
+.lessonSection {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  h2 {
+    font-size: 1.75rem;
+    color: #4a4a4a;
+    border-bottom: 2px solid #5d5dff;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.textContent {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  .translation {
+    font-style: italic;
+    color: #888;
+  }
+}
+
+.questionsContainer {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.questionCard {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  background-color: #fafafa;
+
+  h3 {
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.optionButton {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+
+  &:hover {
+    background-color: #e6e6e6;
+  }
+
+  &.correct {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+  }
+
+  &.incorrect {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+  }
+}
+
+.feedback {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.feedbackCorrect {
+  color: #28a745;
+}
+
+.feedbackIncorrect {
+  color: #dc3545;
+}
+
+.sentenceText {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  font-size: 1.1rem;
+  .blank {
+    color: #a0a0a0;
+    font-weight: bold;
+  }
+}

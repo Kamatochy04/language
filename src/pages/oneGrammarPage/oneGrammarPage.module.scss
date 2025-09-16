@@ -1,78 +1,184 @@
+$primary-color: #5d5dff;
+$secondary-color: #333333;
+$text-color: #4a4a4a;
+$bg-color: #f7f9fc;
+$card-bg-color: #b7b7b7;
+$border-color: #e0e0e0;
+$highlight-color: #ffc107;
+$exception-bg: #fffbe6;
+$note-bg: #e6f7ff;
+
 .container {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  position: relative;
-  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  // background-color: $bg-color;
+  background: linear-gradient(135deg, #3d2c60, #290468);
+}
+
+.article {
+  max-width: 900px;
+  width: 100%;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
 }
 
 .header {
-  position: relative;
-  padding: 1rem;
   text-align: center;
-  z-index: 1;
-  text-align: center;
-
-  .titleWrapper {
-    position: relative;
-    display: inline-block;
-  }
-
-  .title {
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: #fff;
-    margin: 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    letter-spacing: -1px;
-    position: relative;
-
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100px;
-      height: 4px;
-      background: linear-gradient(90deg, #ffd700, #ffed4e);
-      border-radius: 2px;
-    }
-  }
-
-  .subtitle {
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin: 0.5rem 0 0;
-    font-weight: 300;
-  }
-}
-
-.mainContent {
-  padding: 0 15px;
-
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.block {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background: rgba(0, 0, 0, 0.268);
-  padding: 10px;
-  border-radius: 16px;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid $border-color;
+  padding-bottom: 1rem;
 }
 
 .title {
-  text-align: start;
-  font-size: 32px;
-  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $primary-color;
+  margin-bottom: 0.5rem;
 }
 
-.text {
-  color: #fff;
-  font-size: 18px;
-  line-height: 140%;
-  max-width: 80%;
+.subtitle {
+  font-size: 1.1rem;
+  color: $secondary-color;
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: $secondary-color;
+  border-bottom: 2px solid $primary-color;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.subheading {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #666666;
+  margin-bottom: 1rem;
+}
+
+.paragraph {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: $text-color;
+}
+
+.highlight {
+  font-weight: bold;
+  color: $primary-color;
+}
+
+.exampleBlock {
+  background-color: #f0f0f0;
+  border-left: 4px solid $primary-color;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 4px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.list,
+.orderedList {
+  margin: 1rem 0 1rem 1.5rem;
+  padding: 0;
+  line-height: 1.8;
+  color: $text-color;
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.listHighlight {
+  font-weight: bold;
+  color: $primary-color;
+}
+
+.arrowIcon {
+  width: 1rem;
+  height: 1rem;
+  vertical-align: middle;
+}
+
+.grammarTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+
+  th,
+  td {
+    border: 1px solid $border-color;
+    padding: 12px 15px;
+    text-align: left;
+  }
+
+  thead {
+    background-color: #ececec;
+    font-weight: bold;
+    color: #555555;
+  }
+}
+
+.note {
+  background-color: $note-bg;
+  border-left: 4px solid #007bff;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  color: #004085;
+}
+
+.noteIcon {
+  margin-right: 0.5rem;
+}
+
+.orderedList {
+  counter-reset: my-counter;
+
+  li {
+    list-style: none;
+    position: relative;
+
+    &::before {
+      content: counter(my-counter) ".";
+      counter-increment: my-counter;
+      font-weight: bold;
+      color: $primary-color;
+      position: absolute;
+      left: -2rem;
+      top: 0;
+    }
+  }
+}
+
+.listItemText {
+  font-weight: bold;
+}
+
+.exceptionBox {
+  background-color: $exception-bg;
+  border: 1px solid $highlight-color;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+}
+
+.exceptionTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: $secondary-color;
+  margin-bottom: 1rem;
+}
+
+.exceptionText {
+  color: #d1b402;
+  font-weight: 500;
 }

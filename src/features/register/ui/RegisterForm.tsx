@@ -7,7 +7,7 @@ import { Button, Input } from "@/shared/components";
 import styles from "./registerForm.module.scss";
 
 function RegisterForm() {
-  const { name, email, password, repeatPassword } = useAppSelector(
+  const { username, password, repeatPassword } = useAppSelector(
     (state) => state.userSlice.user
   );
   const dispatch = useAppDispatch();
@@ -18,7 +18,7 @@ function RegisterForm() {
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name: field, value } = event.target;
     dispatch(
-      setUserData({ name, email, password, repeatPassword, [field]: value })
+      setUserData({ username, password, repeatPassword, [field]: value })
     );
     if (error && (field === "password" || field === "repeatPassword")) {
       setError("");
@@ -28,12 +28,11 @@ function RegisterForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    registerUser({ email, password, name })
+    registerUser({ password, username })
       .unwrap()
       .then((data) => {
-        localStorage.setItem("jwt_token", data.token);
-        console.log(data);
-        navigate("/");
+        localStorage.setItem("jwt_token", data.accessToken);
+        navigate("/information");
       })
       .catch((err) => {
         setError(
@@ -53,19 +52,8 @@ function RegisterForm() {
             id="name"
             type="text"
             placeholder="Введите ваше имя"
-            name="name"
-            value={name}
-            onChange={onChange}
-            className={styles.input}
-          />
-
-          <Input
-            label="Почта"
-            id="email"
-            type="email"
-            name="email"
-            placeholder="Введите вашу почту"
-            value={email}
+            name="username"
+            value={username}
             onChange={onChange}
             className={styles.input}
           />
