@@ -1,4 +1,4 @@
-import styles from "./LessonPage.module.scss";
+import styles from "./lessonPage.module.scss";
 
 function LessonPage() {
   return (
